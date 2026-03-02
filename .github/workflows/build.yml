@@ -23,17 +23,6 @@ jobs:
           df -h
           lsblk
           free -h
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@master
-        with:
-          root-reserve-mb: 20480
-          swap-size-mb: 1024
-          remove-dotnet: 'false'
-      - name: Check build space after maximize-build-space
-        run: |
-          df -h
-          lsblk
-          free -h
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Setup environment
